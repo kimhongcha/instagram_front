@@ -7,10 +7,16 @@
                 
                 <div class="login_user_name">
                   <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일" v-model ="user_id"></input>
+                  <p>
+                      아이디를 입력해주세요.
+                  </p>
                 </div>
                 
                 <div class="login_user_password">
                   <input type="password" id="user_password" placeholder="비밀번호" v-model ="user_password"></input>
+                  <p>
+                      비밀번호를 입력해주세요.
+                  </p>
                 </div>
 
                 <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
@@ -119,6 +125,18 @@ export default {
   color: #444444;
   font-size: 13px;
   padding: 7px 8px 7px;
+}
+
+.login_user_name > p{
+  text-align: left;
+  color: red;
+  font-size: 12px;
+}
+
+.login_user_password > p{
+  text-align: left;
+  color: red;
+  font-size: 12px;
 }
 
 .login_user_birth>input{
