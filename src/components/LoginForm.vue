@@ -29,13 +29,15 @@
 export default {
     data() {
         return {
-            user_id : 'rlacjfgus2@gmail.com',
-            user_password: 'sdfsdf1!'
+            user_id : '',
+            user_password: ''
         }
     },
     methods: {
         requestLogin() {    
             console.log('ID = ' + this.user_id + ' Password = ' + this.user_password)
+
+
         }
     }
 }
