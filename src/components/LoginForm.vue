@@ -2,13 +2,17 @@
   <!-- 로그인 폼 -->
             <div class="form">
               <h1 class="sprite_insta_big_logo title"></h1>
+              
               <form method="post" @submit.prevent="requestLogin">
-                <p class="login_user_name">
+                
+                <div class="login_user_name">
                   <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일"></input>
-                </p>
-                <p class="login_user_password">
+                </div>
+                
+                <div class="login_user_password">
                   <input type="password" id="user_password" placeholder="비밀번호"></input>
-                </p>
+                </div>
+
                 <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
                 
               </form>
