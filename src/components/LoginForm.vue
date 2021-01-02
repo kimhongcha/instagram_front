@@ -6,15 +6,15 @@
               <form method="post" @submit.prevent="requestLogin">
                 
                 <div class="login_user_name">
-                  <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일" v-model ="user_id"></input>
-                  <p>
+                  <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일" v-model ="userId"></input>
+                  <p v-show="isIdValid">
                       아이디를 입력해주세요.
                   </p>
                 </div>
                 
                 <div class="login_user_password">
-                  <input type="password" id="user_password" placeholder="비밀번호" v-model ="user_password"></input>
-                  <p>
+                  <input type="password" id="user_password" placeholder="비밀번호" v-model ="userPassword"></input>
+                  <p v-show="isPasswordValid">
                       비밀번호를 입력해주세요.
                   </p>
                 </div>
@@ -30,20 +30,62 @@
 </template>
 
 <script>
-//import axios from 'axios';
+import axios from 'axios';
 
 export default {
     data() {
         return {
-            user_id : '',
-            user_password: ''
+            userId : '',
+            userPassword: '',
+            isIdValid: false,
+            isPasswordValid: false
         }
     },
     methods: {
-        requestLogin() {    
-            console.log('ID = ' + this.user_id + ' Password = ' + this.user_password)
+        requestLogin: async function() {
+            if(this.userId === '') {
+                this.isIdValid = true
+                
+                return
+            }    
 
+            this.isIdValid = false
 
+            if(this.userPassword === '') {
+                this.isPasswordValid = true
+                
+                return
+            }
+
+            this.isPasswordValid = false
+
+            console.log('ID = ' + this.userId + ' Password = ' + this.userPassword)
+
+            let params = {
+              'userId' : this.userId,
+              'userPw' : this.userPassword     
+            }
+
+            await axios.post('http://localhost:9000/user/login', params) 
+                                .catch(function (error) {
+                                  if (error.response) {
+                                    // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
+                                    console.log(error.response.data);
+                                    console.log(error.response.status);
+                                    console.log(error.response.headers);
+                                  }
+                                  else if (error.request) {
+                                    // 요청이 이루어 졌으나 응답을 받지 못했습니다.
+                                    // `error.request`는 브라우저의 XMLHttpRequest 인스턴스 또는
+                                    // Node.js의 http.ClientRequest 인스턴스입니다.
+                                    console.log(error.request);
+                                  }
+                                  else {
+                                    // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
+                                    console.log('Error', error.message);
+                                  }
+                                  console.log(error.config);
+                                });
         }
     }
 }
