@@ -45,7 +45,7 @@ export default {
         requestLogin: async function() {
             this.isIdValid = false
             this.isPasswordValid = false
-            
+
             if(this.userId === '') {
                 this.isIdValid = true
                 
@@ -87,7 +87,6 @@ export default {
                                     // 오류를 발생시킨 요청을 설정하는 중에 문제가 발생했습니다.
                                     console.log('Error', error.message);
                                   }
-                                  console.log(error.config);
                                 });
         }
     }
