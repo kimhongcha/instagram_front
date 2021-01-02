@@ -17,9 +17,9 @@
                 
               </form>
 
-                <hr class="line"></hr>
+                <!-- <hr class="line"></hr>
                 
-                <button id="login_with_kakao" value="Kakao로 로그인하기" class="login_with_kakao">KaKao로 로그인하기</button>
+                <button id="login_with_kakao" value="Kakao로 로그인하기" class="login_with_kakao">KaKao로 로그인하기</button> -->
             </div>
 </template>
 
