@@ -15,7 +15,6 @@
 
 import LoginForm from '@/components/LoginForm.vue';
 import RegisterButton from '@/components/RegisterButton.vue';
-// import axios from 'axios';
 
 export default {
   name: 'Login',
@@ -27,9 +26,7 @@ export default {
     LoginForm
   },
   methods: { 
-    requestLogin() {
 
-    }
 
   } 
 

@@ -3,14 +3,14 @@
             <div class="form">
               <h1 class="sprite_insta_big_logo title"></h1>
               
-              <form method="post" @submit.prevent="requestLogin">
+              <form method="post" @submit="requestLogin">
                 
                 <div class="login_user_name">
-                  <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일"></input>
+                  <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일" :value ="user_id"></input>
                 </div>
                 
                 <div class="login_user_password">
-                  <input type="password" id="user_password" placeholder="비밀번호"></input>
+                  <input type="password" id="user_password" placeholder="비밀번호" :value="user_password"></input>
                 </div>
 
                 <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
@@ -24,8 +24,20 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios';
 
+export default {
+    data() {
+        return {
+            user_id : 'rlacjfgus2@gmail.com',
+            user_password: 'sdfsdf1!'
+        }
+    },
+    methods: {
+        requestLogin() {    
+            console.log('ID = ' + user_id + 'Password = ' + this.user_password)
+        }
+    }
 }
 </script>
 
