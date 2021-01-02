@@ -4,7 +4,7 @@
               <div class="bottom_box">
                 <div>
                   <span>계정이 없으신가요? </span>
-                  <a href="SigninContainer">회원가입</a>
+                  <a href="register">회원가입</a>
                 </div>
               </div>
             </div>

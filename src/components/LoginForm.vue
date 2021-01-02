@@ -43,6 +43,9 @@ export default {
     },
     methods: {
         requestLogin: async function() {
+            this.isIdValid = false
+            this.isPasswordValid = false
+            
             if(this.userId === '') {
                 this.isIdValid = true
                 
