@@ -69,7 +69,7 @@ export default {
               'userPw' : this.userPassword     
             }
 
-            await axios.post('http://localhost:9000/user/login', params) 
+            await axios.post('http://localhost:9000/login', params) 
                                 .catch(function (error) {
                                   if (error.response) {
                                     // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
@@ -104,12 +104,6 @@ export default {
   margin-bottom: 30px;
 }
 
-.form .expl{
-  font-size: 17px;
-  text-align: center;
-  color: #969696;
-  font-weight: 600;
-}
 
 .form .title {
   overflow: hidden;
@@ -195,7 +189,7 @@ export default {
   padding: 7px 8px 7px;
 }
 
-.form p{
+.form div{
   margin-bottom: 10px;
 }
 
