@@ -1,32 +1,34 @@
 <template>
        <div id="main_container">
          <div class="form_container">
-
-          <div class="form">
-             <h1 class="sprite_insta_big_logo title"></h1>
-             <form method="post" onSubmit={this.login.bind(this)}>
-               <p class="login_user_name">
-                 <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일"></input>
-               </p>
-               <p class="login_user_password">
-                 <input type="text" id="user_password" placeholder="비밀번호"></input>
-               </p>
-               <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
-               <p>
-                   <hr class="line"></hr>
-               </p>
-               <button id="login_with_kakao" value="Kakao로 로그인하기" class="login_with_kakao">KaKao로 로그인하기</button>
-             </form>
-           </div>
-
-           <div>
-             <div class="bottom_box">
-               <div>
-                 <span>계정이 없으신가요? </span>
-                 <a href="SigninContainer">회원가입</a>
-               </div>
-             </div>
-           </div>
+          
+            <!-- 로그인 폼 -->
+            <div class="form">
+              <h1 class="sprite_insta_big_logo title"></h1>
+              <form method="post" onSubmit={this.login.bind(this)}>
+                <p class="login_user_name">
+                  <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일"></input>
+                </p>
+                <p class="login_user_password">
+                  <input type="password" id="user_password" placeholder="비밀번호"></input>
+                </p>
+                <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
+                <p>
+                    <hr class="line"></hr>
+                </p>
+                <button id="login_with_kakao" value="Kakao로 로그인하기" class="login_with_kakao">KaKao로 로그인하기</button>
+              </form>
+            </div>
+            
+            <!-- 회원가입 버튼 -->
+            <div>
+              <div class="bottom_box">
+                <div>
+                  <span>계정이 없으신가요? </span>
+                  <a href="SigninContainer">회원가입</a>
+                </div>
+              </div>
+            </div>
           </div>
        </div>
 </template>
@@ -37,6 +39,9 @@ export default {
   name: 'Login',
   props: {
     msg: String
+  },
+  methods: {
+
   } 
 
 }
