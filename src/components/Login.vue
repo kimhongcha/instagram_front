@@ -5,7 +5,7 @@
             <!-- 로그인 폼 -->
             <div class="form">
               <h1 class="sprite_insta_big_logo title"></h1>
-              <form method="post" onSubmit={this.login.bind(this)}>
+              <form method="post" @submit.prevent="requestLogin">
                 <p class="login_user_name">
                   <input type="text" id="user_name" placeholder="사용자 이름 또는 이메일"></input>
                 </p>
@@ -20,27 +20,30 @@
               </form>
             </div>
             
-            <!-- 회원가입 버튼 -->
-            <div>
-              <div class="bottom_box">
-                <div>
-                  <span>계정이 없으신가요? </span>
-                  <a href="SigninContainer">회원가입</a>
-                </div>
-              </div>
-            </div>
+            <RegisterButton />
+           
           </div>
        </div>
 </template>
 
 
 <script>
+
+import RegisterButton from '@/components/RegisterButton.vue';
+import axios from 'axios';
+
 export default {
   name: 'Login',
   props: {
     msg: String
   },
-  methods: {
+  components: {
+    RegisterButton
+  },
+  methods: { 
+    requestLogin() {
+
+    }
 
   } 
 
@@ -78,16 +81,6 @@ export default {
   margin: 22px auto 8px;
 }
 
-/* .form label{
-  display: block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: 500;
-  font-size: 13px;
-  float: left; 
-  width: 30%;
-  color:#5b5b5b;
-} */
 
 .form .line{
   border: 0.5px solid #bbbbbb;
@@ -97,18 +90,7 @@ export default {
   border: 0.5px solid #bbbbbb;
 }
 
-/* 
-.form input{
-  width: 100%;
-  background: 0 0;
-  background: #f9f9f9;
-  border: 1px solid #ebebeb;
-  border-radius: 3px;
-  box-sizing: border-box;
-  color: #444444;
-  font-size: 13px;
-  padding: 7px 8px 7px;
-} */
+
 
 .login_user_gender{
   float:left;
@@ -221,14 +203,4 @@ export default {
   cursor: pointer;
 }
 
-.bottom_box{
-  text-align: center;
-  font-weight: 555;
-  /*height: 290px;*/
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
-  padding: 20px 40px 25px 40px;
-  /*display: flex;*/
-  align-items: center;
-}
 </style>
