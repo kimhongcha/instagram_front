@@ -2,22 +2,24 @@
     <div class="register">
         
             <div class="register_container">
-            <InputForm inputId="user_id"
-                        inputType="text"  
-                        inputPlaceHolder="이메일 주소" 
-                        v-model="userId" />
-            
-            <InputForm inputId="user_name"
-                        inputType="text"  
-                        inputPlaceHolder="성명" 
-                        v-model="userName" />
+            <form action="">
+                <InputForm inputId="user_id"
+                            inputType="text"  
+                            inputPlaceHolder="이메일 주소" 
+                            v-model="userId" />
+                
+                <InputForm inputId="user_name"
+                            inputType="text"  
+                            inputPlaceHolder="성명" 
+                            v-model="userName" />
 
-            <InputForm inputId="user_name"
-                        inputType="password"  
-                        inputPlaceHolder="비밀번호" 
-                        v-model="userPassword" />
+                <InputForm inputId="user_name"
+                            inputType="password"  
+                            inputPlaceHolder="비밀번호" 
+                            v-model="userPassword" />
 
-            <button id="submit_btn" value="가입하기" class="submit_btn">가입하기</button>
+                <button id="submit_btn" :disabled="isDisabled" value="가입하기" :class="submitButtonStyle">가입하기</button>
+            </form>
         </div>
     </div>
 </template>
@@ -33,6 +35,18 @@ export default {
             userName: '',
             userPassword: ''
         }
+    },
+    computed: {
+        submitButtonStyle() {
+            return this.isDisabled === false ? 'submit_btn_abled' : 'submit_btn_disabled'
+        },
+
+        isDisabled() {
+        
+            return this.userId === '' || 
+                    this.userName === '' || 
+                    this.userPassword === ''
+      },
     },
     components: {
         InputForm
@@ -54,7 +68,7 @@ export default {
     margin-bottom: 30px;
 }
 
-.register_container .submit_btn{
+.submit_btn_abled{
   background: #3897f0;
   border-color: #3897f0;
   color: #fff;
@@ -70,4 +84,22 @@ export default {
   cursor: pointer;
   margin: 25px 25px 5px 5px;
 }
+
+.submit_btn_disabled{
+  background: #D8D8D8;
+  border-color: #D8D8D8;
+  color: #fff;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 28px;
+  outline: none;
+  width: 100%;
+  margin-top: 10px;
+  cursor: pointer;
+  margin: 25px 25px 5px 5px;
+}
+
 </style>
