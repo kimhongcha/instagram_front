@@ -13,8 +13,8 @@
 
 <script>
 
-import LoginForm from '@/components/LoginForm.vue';
-import RegisterButton from '@/components/RegisterButton.vue';
+import LoginForm from '@/components/login/LoginForm.vue';
+import RegisterButton from '@/components/login/RegisterButton.vue';
 
 export default {
   name: 'Login',

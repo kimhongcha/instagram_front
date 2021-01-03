@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import InputForm from '@/components/InputForm.vue';
+import InputForm from '@/components/base/InputForm.vue';
 
 export default {
     name: 'Register',
