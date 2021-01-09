@@ -2,17 +2,20 @@
     <div class="feed">
         <!-- 피드 헤더 -->
         <FeedHeader /> 
-        <!-- 피드 이미지 -->
 
+        <!-- 피드 이미지 -->
         <FeedImage />
+
         <!-- 피드 버튼 -->
         <FeedIcon />
+
         <!-- 피드 좋아요 -->
-
         <FeedLike />
-        <!-- 피드 댓글 -->
 
+        <!-- 피드 댓글 -->
+        <FeedComment />
         <!-- 피드 게시 시간 -->
+
         <!-- 피드 댓글 입력 -->
     </div>
 </template>
@@ -22,6 +25,7 @@ import FeedHeader from '@/components/feed/FeedHeader.vue'
 import FeedImage from '@/components/feed/FeedImage.vue'
 import FeedIcon from '@/components/feed/FeedIcon.vue'
 import FeedLike from '@/components/feed/FeedLike.vue'
+import FeedComment from '@/components/feed/FeedComment.vue'
 
 export default {
     name: 'FeedBoard',
@@ -29,7 +33,8 @@ export default {
         FeedHeader,
         FeedImage,
         FeedIcon,
-        FeedLike
+        FeedLike,
+        FeedComment
     }
 
 }

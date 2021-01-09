@@ -8,7 +8,7 @@
                 <div class="nick_name m_text">KindTiger</div>
                 <div class="country s_text">Seoul, South Korea</div>
             </div>
-
+            
         </div>
 
         <div class="sprite_more_icon"></div>
