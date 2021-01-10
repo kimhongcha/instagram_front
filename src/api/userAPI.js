@@ -3,19 +3,14 @@ import { url } from './url.js'
 
 async function login(id, password) {
     
-  axios.defaults.baseURL = "api"
+  axios.defaults.baseURL = "http://localhost:9000/api"
   
   const params = {
         'userId' : id,
         'userPw' : password
     }
     console.log(url)
-    await axios.post('/login', params,
-                                    {headers: {
-                                      "Access-Control-Allow-Origin": "*",
-                                      "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-                                      "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-                                }}) 
+    await axios.post('/login', params) 
                                 .then( res => {
                                   if(res === 'Y') {
                                     console.log('로그인 성공')
