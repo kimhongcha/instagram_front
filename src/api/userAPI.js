@@ -8,7 +8,7 @@ async function login(id, password) {
         'userPw' : password
     }
 
-    return await axios.post(BASE_URL + 'login', params) 
+    await axios.post(BASE_URL + 'api/login', params) 
                                 .catch(function (error) {
                                   if (error.response) {
                                     // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
