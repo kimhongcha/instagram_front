@@ -1,5 +1,5 @@
 import axios from 'axios'
-import BASE_URL from './url.js'
+import { url } from './url.js'
 
 async function login(id, password) {
     
@@ -7,8 +7,8 @@ async function login(id, password) {
         'userId' : id,
         'userPw' : password
     }
-
-    await axios.post(BASE_URL + 'api/login', params) 
+    console.log(url)
+    await axios.post(url + 'api/login', params) 
                                 .then( res => {
                                   if(res === 'Y') {
                                     console.log('로그인 성공')
