@@ -1,10 +1,10 @@
 import axios from 'axios'
 import { url } from './url.js'
 
+axios.defaults.baseURL = "http://192.168.0.13:9000/api"
+
 async function login(id, password) {
-    
-  axios.defaults.baseURL = "http://192.168.0.13:9000/api"
-  
+
   const params = {
         'userId' : id,
         'userPw' : password,
