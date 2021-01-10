@@ -139,6 +139,7 @@ export default {
 .contents .top{
 
 }
+
 .top .more_detail{
     position: absolute;
     right: -60px;
