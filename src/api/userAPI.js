@@ -9,6 +9,14 @@ async function login(id, password) {
     }
 
     await axios.post(BASE_URL + 'api/login', params) 
+                                .then( res => {
+                                  if(res === 'Y') {
+                                    console.log('로그인 성공')
+                                  }
+                                  else {
+                                    console.log('로그인 실패')
+                                  }
+                                })
                                 .catch(function (error) {
                                   if (error.response) {
                                     // 요청이 이루어졌으며 서버가 2xx의 범위를 벗어나는 상태 코드로 응답했습니다.
@@ -27,14 +35,7 @@ async function login(id, password) {
                                     console.log('Error', error.message);
                                   }
                                 })
-                                .then( res => {
-                                    if(res === 'Y') {
-                                      console.log('로그인 성공')
-                                    }
-                                    else {
-                                      console.log('로그인 실패')
-                                    }
-                                });
+                                
     
 }
 
