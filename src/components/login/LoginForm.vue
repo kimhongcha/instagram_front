@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import login from '@/api/userAPI.js';
+import { login } from '@/api/userAPI.js';
 
 export default {
     data() {
@@ -42,7 +42,7 @@ export default {
         }
     },
     methods: {
-        requestLogin: async function() {
+        requestLogin() {
             this.isIdValid = false
             this.isPasswordValid = false
 
@@ -64,7 +64,7 @@ export default {
 
             console.log('ID = ' + this.userId + ' Password = ' + this.userPassword)
 
-            await login(this.userId, this.userPassword)
+            login(this.userId, this.userPassword)
         }
     }
 }
