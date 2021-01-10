@@ -19,7 +19,7 @@
                   </p>
                 </div>
 
-                <button id="submit_btn" value="로그인" class="submit_btn">로그인</button>
+                <button id="submit_btn" :disabled="buttonDisabled" value="로그인" class="submit_btn">로그인</button>
                 
               </form>
 
@@ -38,7 +38,8 @@ export default {
             userId : '',
             userPassword: '',
             isIdValid: false,
-            isPasswordValid: false
+            isPasswordValid: false,
+            buttonDisabled: true
         }
     },
     methods: {
@@ -62,9 +63,14 @@ export default {
 
             this.isPasswordValid = false
 
+            this.buttonDisabled = false
+
             console.log('ID = ' + this.userId + ' Password = ' + this.userPassword)
 
             login(this.userId, this.userPassword)
+
+            this.buttonDisabled = true
+            
         }
     }
 }
