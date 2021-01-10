@@ -8,7 +8,7 @@ async function login(id, password) {
         'userPw' : password
     }
     console.log(url)
-    await axios.post('/api/login', params) 
+    await axios.post(url + '/api/login', params) 
                                 .then( res => {
                                   if(res === 'Y') {
                                     console.log('로그인 성공')
