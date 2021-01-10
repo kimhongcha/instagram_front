@@ -3,12 +3,14 @@ import { url } from './url.js'
 
 async function login(id, password) {
     
-    const params = {
+  axios.defaults.baseURL = "api"
+  
+  const params = {
         'userId' : id,
         'userPw' : password
     }
     console.log(url)
-    await axios.post(url + 'api/login', params,
+    await axios.post('/login', params,
                                     {headers: {
                                       "Access-Control-Allow-Origin": "*",
                                       "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
