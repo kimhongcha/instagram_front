@@ -39,7 +39,7 @@ export default {
             userPassword: '',
             isIdValid: false,
             isPasswordValid: false,
-            buttonDisabled: true
+            buttonDisabled: false
         }
     },
     methods: {
@@ -48,8 +48,8 @@ export default {
             this.isPasswordValid = false
 
             if(this.userId === '') {
-                this.isIdValid = true
-                
+                  this.isIdValid = true
+                  
                 return
             }    
 
@@ -63,13 +63,13 @@ export default {
 
             this.isPasswordValid = false
 
-            this.buttonDisabled = false
+            this.buttonDisabled = true
 
             console.log('ID = ' + this.userId + ' Password = ' + this.userPassword)
 
             login(this.userId, this.userPassword)
 
-            this.buttonDisabled = true
+            this.buttonDisabled = false
             
         }
     }

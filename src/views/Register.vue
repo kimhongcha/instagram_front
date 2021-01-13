@@ -51,7 +51,7 @@ export default {
         },
 
         isDisabled() {
-            return this.noFiiled || this.doingRegister
+            return this.noFilled || this.doingRegister
         }
 
     },
