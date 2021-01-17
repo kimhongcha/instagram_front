@@ -4,6 +4,8 @@
       <router-link to="/">Home</router-link>  
       | 
       <router-link to="/feedboard">FeedBoard</router-link>
+      |
+      <router-link to="/mypageboard">MypageBoard</router-link>  
     </div>
     <router-view/>
   </div>

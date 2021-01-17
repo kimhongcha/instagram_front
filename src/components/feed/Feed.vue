@@ -1,4 +1,6 @@
 <template>
+<div>
+    <feedTop/>
     <div class="feed">
         <!-- 피드 헤더 -->
         <FeedHeader /> 
@@ -18,6 +20,7 @@
 
         <!-- 피드 댓글 입력 -->
     </div>
+</div>
 </template>
 
 <script>
@@ -26,6 +29,7 @@ import FeedImage from '@/components/feed/FeedImage.vue'
 import FeedIcon from '@/components/feed/FeedIcon.vue'
 import FeedLike from '@/components/feed/FeedLike.vue'
 import FeedComment from '@/components/feed/FeedComment.vue'
+import FeedTop from '@/components/feed/FeedTop.vue'
 
 export default {
     name: 'FeedBoard',
@@ -34,7 +38,8 @@ export default {
         FeedImage,
         FeedIcon,
         FeedLike,
-        FeedComment
+        FeedComment,
+        FeedTop
     }
 
 }
@@ -49,6 +54,6 @@ export default {
     border-radius: 3px;
     background: #fff;
     margin: 0px auto;
-
+    margin-top:5%;
 }
 </style>
