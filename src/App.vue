@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link>  
-      | 
-      <router-link to="/feedboard">FeedBoard</router-link>
-      |
-      <router-link to="/mypageboard">MypageBoard</router-link>  
+      <router-link to="/"></router-link>  
+      <router-link to="/feedboard"></router-link>
+      <router-link to="/mypageboard"></router-link>  
     </div>
     <router-view/>
   </div>
@@ -21,7 +19,6 @@
 }
 
 #nav {
-  padding: 30px;
 
   a {
     font-weight: bold;
