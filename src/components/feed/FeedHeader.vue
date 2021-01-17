@@ -6,7 +6,7 @@
             </div>
             <div class="user_name">
                 <div class="nick_name m_text">KindTiger</div>
-                <div class="country s_text">Seoul, South Korea</div>
+                <!-- <div class="country s_text">Seoul, South Korea</div> -->
             </div>
             
         </div>

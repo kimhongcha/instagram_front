@@ -1,64 +1,12 @@
 <template>
-        <!-- <article class="contents">
-            <header class="top">
-                <div class="user_container">
-                    <div class="profile_img">
-                        <img src="../imgs/thumb.jpeg" alt="프로필 이미지">
-                    </div>
-                    <div class="user_name">
-                        <div class="nick_name m_text">KindTiger</div>
-                        <div class="country s_text">Seoul, South Korea</div>
-                    </div>
-
-                </div>
-
-                <div class="sprite_more_icon"></div>
-            </header>
-
-            <div class="img_section">
-                <div class="trans_inner">
-                    <div><img src="../imgs/img_section/img01.jpg" alt="visual01"></div>
-                </div>
-            </div>
-
-            <div class="bottom_icons">
-                <div class="left_icons">
-                    <div class="heart_btn">
-                        <div class="sprite_heart_icon_outline" data-name="heartbeat"></div>
-                    </div>
-                    <div class="sprite_bubble_icon"></div>
-                    <div class="sprite_share_icon" data-name="share"></div>
-                </div>
-                <div class="right_icon">
-                    <div class="sprite_bookmark_outline" data-name="bookmark"></div>
-                </div>
-            </div>
-
-            <div class="likes m_text">
-                좋아요
-                <span class="count">2,346</span>
-                개
-            </div>
-
-            <div class="comment_container">
-                <div class="comment">
-                    <div class="nick_name m_text">dongdong2</div>
-                    <div>강아지가 너무 귀여워요~!</div>
-                </div>
-                <div class="small_heart">
-                    <div class="sprite_small_heart_icon_outline"></div>
-                </div>
-            </div>
-
-            <div class="timer">1시간 전</div>
-
-            <div class="comment_field">
-                <input type="text" placeholder="댓글달기...">
-                <div class="upload_btn m_text">게시</div>
-            </div>
-        </article> -->
         <div>
-            <Feed />
+            <Feed v-for="feed in feedList" 
+                    :key="feed.id" 
+                    :author="feed.author"
+                    :like="feed.like"
+                    :image="feed.image"
+                    :comment="feed.comment"
+                    :createdAt="feed.createdAt" />
         </div>
 </template>
 
@@ -69,7 +17,77 @@ export default {
     name: 'FeedBoard',
     components: {
         Feed
-    }
+    },
+    data() {
+        return {
+            feedList: [
+                {
+                    'id' : 1,
+                    'author' : '홍성표',
+                    'like' : ['김철현', '차유미'],
+                    'image' : [],
+                    'comment' : [
+                        {
+                            'author' : '김철현',
+                            'text' : '강아지가 귀여워요'
+                        },
+                        {
+                            'author' : '차유미',
+                            'text' : '강아지 강아지'
+                        },
+                    ],
+
+                    'createdAt' : '2021-01-07 13:15:30'
+                },
+                {
+                    'id' : 2,
+                    'author' : '홍성표',
+                    'like' : ['김철현', '차유미'],
+                    'image' : [],
+                    'comment' : [
+                        {
+                            'author' : '김철현',
+                            'text' : '강아지가 귀여워요'
+                        },
+                        {
+                            'author' : '차유미',
+                            'text' : '강아지 강아지'
+                        },
+                    ],
+
+                    'createdAt' : '2021-01-08 13:15:30'
+                },
+                {
+                    'id' : 3,
+                    'author' : '홍성표',
+                    'like' : ['김철현', '차유미'],
+                    'image' : [],
+                    'comment' : [
+                        {
+                            'author' : '김철현',
+                            'text' : '강아지가 귀여워요'
+                        },
+                        {
+                            'author' : '차유미',
+                            'text' : '강아지 강아지'
+                        },
+                    ],
+                    'createdAt' : '2021-01-09 13:15:30'
+                },
+            ]
+        }
+    },
+    computed: {
+        feedPost() {
+            return this.$store.state.feedPost
+        }
+    },
+    methods: {
+        updateFeedList() {
+            this.feedList = this.feedPost
+        }
+    },
+
 }
 </script>
 
