@@ -16,9 +16,13 @@
 
         <!-- 피드 댓글 -->
         <FeedComment />
+
         <!-- 피드 게시 시간 -->
+        <div class="timer">1시간 전</div>
 
         <!-- 피드 댓글 입력 -->
+        <FeedInputComment />
+
     </div>
 </div>
 </template>
@@ -30,6 +34,7 @@ import FeedIcon from '@/components/feed/FeedIcon.vue'
 import FeedLike from '@/components/feed/FeedLike.vue'
 import FeedComment from '@/components/feed/FeedComment.vue'
 import FeedTop from '@/components/feed/FeedTop.vue'
+import FeedInputComment from '@/components/feed/FeedInputComment.vue'
 
 export default {
     name: 'FeedBoard',
@@ -39,7 +44,8 @@ export default {
         FeedIcon,
         FeedLike,
         FeedComment,
-        FeedTop
+        FeedTop,
+        FeedInputComment
     }
 
 }
@@ -55,5 +61,9 @@ export default {
     background: #fff;
     margin: 0px auto;
     margin-top:5%;
+}
+
+.timer {
+    text-align: left;
 }
 </style>

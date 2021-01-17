@@ -2,7 +2,7 @@
     <div class="register">
         
             <div class="register_container">
-            <form action="">
+            <form method="post" @submit.prevent="requestRegister">
                 <InputForm inputId="user_id"
                             inputType="text"  
                             inputPlaceHolder="이메일 주소" 
@@ -26,6 +26,7 @@
 
 <script>
 import InputForm from '@/components/base/InputForm.vue';
+import { register } from '@/api/userAPI.js';
 
 export default {
     name: 'Register',
@@ -33,23 +34,34 @@ export default {
         return {
             userId : '',
             userName: '',
-            userPassword: ''
+            userPassword: '',
+            doingRegister: false
         }
     },
     computed: {
         submitButtonStyle() {
-            return this.isDisabled === false ? 'submit_btn_abled' : 'submit_btn_disabled'
+            return this.noFilled === false ? 'submit_btn_abled' : 'submit_btn_disabled'
         },
 
-        isDisabled() {
+        noFilled() {
         
             return this.userId === '' || 
                     this.userName === '' || 
                     this.userPassword === ''
-      },
+        },
+
+        isDisabled() {
+            return this.noFilled || this.doingRegister
+        }
+
     },
     components: {
         InputForm
+    },
+    methods: {
+        requestRegister() {
+            register(this.userId, this.userPassword, this.userName)
+        }
     }
 }
 </script>
