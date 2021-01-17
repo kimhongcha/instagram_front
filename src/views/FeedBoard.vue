@@ -8,6 +8,7 @@
                     :comment="feed.comment"
                     :createdAt="feed.createdAt" />
         </div>
+
 </template>
 
 <script>
@@ -92,8 +93,6 @@ export default {
 </script>
 
 <style>
-.feed {
-}
 .contents{
     max-width:933px;
     display: block;

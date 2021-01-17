@@ -1,4 +1,6 @@
 <template>
+<div>
+    <feedTop/>
     <div class="feed">
         <!-- 피드 헤더 -->
         <FeedHeader /> 
@@ -22,6 +24,7 @@
         <FeedInputComment />
 
     </div>
+</div>
 </template>
 
 <script>
@@ -30,6 +33,7 @@ import FeedImage from '@/components/feed/FeedImage.vue'
 import FeedIcon from '@/components/feed/FeedIcon.vue'
 import FeedLike from '@/components/feed/FeedLike.vue'
 import FeedComment from '@/components/feed/FeedComment.vue'
+import FeedTop from '@/components/feed/FeedTop.vue'
 import FeedInputComment from '@/components/feed/FeedInputComment.vue'
 
 export default {
@@ -40,6 +44,7 @@ export default {
         FeedIcon,
         FeedLike,
         FeedComment,
+        FeedTop,
         FeedInputComment
     },
     props: {
@@ -128,7 +133,7 @@ export default {
     background: #fff;
     margin: 0px auto;
     margin-bottom: 60px;
-
+    margin-top:5%;
 }
 
 .timer {
