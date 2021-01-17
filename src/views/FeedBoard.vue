@@ -1,5 +1,6 @@
 <template>
         <div>
+            <Top />
             <Feed v-for="feed in feedList" 
                     :key="feed.id" 
                     :author="feed.author"
@@ -13,11 +14,13 @@
 
 <script>
 import Feed from '@/components/feed/Feed.vue';
+import Top from '@/components/base/Top.vue';
 
 export default {
     name: 'FeedBoard',
     components: {
-        Feed
+        Feed,
+        Top
     },
     data() {
         return {
