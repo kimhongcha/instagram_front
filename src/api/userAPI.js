@@ -54,7 +54,7 @@ async function register(id, password, name) {
     'userName' : name 
   }
 
-  await axios.post('/register', params, {
+  await axios.post('/login/join', params, {
     header: {
       "content-type": "application/json"
     }
