@@ -12,9 +12,9 @@ async function login(id, password) {
   console.log(url + ' ' + params.userId + ' ' + params.userPw)
 
   await axios.post('/login', params, {
-    header: {
-      "content-type": "application/json"
-    }
+    // header: {
+    //   "content-type": "application/json"
+    // }
   }) 
   .then( res => {
     console.log(res)
@@ -55,9 +55,9 @@ async function register(id, password, name) {
   }
 
   await axios.post('/login/join', params, {
-    header: {
-      "content-type": "application/json"
-    }
+    // header: {
+    //   "content-type": "application/json"
+    // }
   }) 
   .then( res => {
     console.log(res)

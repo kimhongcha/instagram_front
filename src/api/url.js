@@ -1,4 +1,4 @@
-const BASE_URL = "http://192.168.0.13:9000/api"
+const BASE_URL = "http://127.0.0.1:9000/api"
 
 
 export {BASE_URL as url}
